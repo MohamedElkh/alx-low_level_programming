@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - print sentence
+ * main - a program that print sentence
  * @void : nothiing
  *
  * Description:"Programming is like building a multilingual puzzle"
