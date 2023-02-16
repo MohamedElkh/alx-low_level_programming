@@ -3,8 +3,9 @@
 
 
 /**
- * Write - a C program that prints exactly Programming is like building a multilingual puzzle, followed by a new line.
- * Your program should end with the value return : zero .
+ * function_name - to prints exactly Programming is like building a multilingual puzzle.
+ * @parameter : void
+ * return : zero value
  */
 
 int main(void) 
