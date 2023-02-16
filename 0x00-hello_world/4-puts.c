@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-/* main - print sentence
+/**
+ * main - print sentence
  * Description:"Programming is like building a multilingual puzzle"
  * Return : Always 0 (Success)
  */
