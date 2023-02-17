@@ -6,20 +6,19 @@
  *
  * Description: prints the alphabet in lowercase, followed by a new line,
  * except q and e .
- * Retrun: 0 Always .
+ * Return: 0 Always .
  */
 
 int main(void)
 {
 	char a;
 
-	a = 'a';
-	while(a <= 'z')
+
+	for (a = 'a'; a <= 'z'; a++)
 	{
-		if(a == 'q' && a == 'e')
-			continue;
+		if (a == 'q' && a == 'e')
+	        	continue;
 		putchar(a);
-		a++;
 	}
 	putchar('\n');
 	return (0);
