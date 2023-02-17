@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - prints the numbers from 0 to 9 
+ * main - prints the numbers from 0 to 9
  * @void: nothing .
  *
  * Description: prints the numbers from 0 to 9 by putchar
