@@ -12,26 +12,26 @@
 
 int main(void)
 {
-        int i , j, q;
+int i , j, q;
 
-        for (i ='0' ; i < '9'; i++){
+for (i ='0';i < '9'; i++)
+{
+for (j = i + 1; j <= '9'; j++)
+{
+for (q = j + 1; q <= '9' ; q++)
+{
+if ((i != j) != q)
+putchar(i);
+putchar(j);
+putchar(q);
+if (i == '7' && q == '9')
+continue;
+putchar(',');
+putchar(' ');
+}
+}
+}
+putchar('\n');
+return (0);
 
-                for ( j = i +1 ; j <= '9'; j++){
-
-                        for ( q = j +1 ; q <= '9' ; q ++){
-
-                                if ((i != j) != q)
-                                putchar(i);
-                                putchar(j);
-                                putchar(q);
-                                if ( i == '7' && q == '9')
-                                continue;
-                                putchar(',');
-                                putchar(' ');
-                        }
-                }
-                
-        }
-	putchar('\n');
-        return (0);
 }
