@@ -18,13 +18,13 @@ int main(void)
 	a = 'a';
 	while (n <= 9)
 	{
-		putchar( (n % 10 ) + '0');
-		n++;
+	putchar( (n % 10 ) + '0');
+	n++;
 	}
 	while (a <= 'f')
 	{
-		putchar(a);
-		a++;
+	putchar(a);
+	a++;
 	}
 	putchar('\n');
 	return (0);
