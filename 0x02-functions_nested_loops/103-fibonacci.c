@@ -15,14 +15,12 @@ int main(void)
 	long i = 1, j = 2;
 	long sum = j;
 
-	while (j + i < 500000)
+	while (j + i < 400000)
 	{
 		j += i;
 	       if (j % 2 == 0)
-	       {
 		       sum += j;
-		       i = j - i;
-	       }
+		       i = j - i
 			++q;	       
 	}
 	printf("%ld\n", sum);
