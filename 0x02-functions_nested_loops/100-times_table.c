@@ -19,7 +19,7 @@ for (i = 0; i <= n; i++)
 {
 _putchar('0');
 for (j = 1; j <= n; j++)
-{ 
+{
 _putchar(',');
 _putchar(' ');
 a = i * j;
@@ -36,7 +36,7 @@ else if (a <= 99 && a >= 10)
 {
 _putchar((a / 10) + '0');
 }
-_putchar((a % 10) + '0');				
+_putchar((a % 10) + '0');
 }
 _putchar('\n');
 }
