@@ -11,23 +11,20 @@
 
 int main(void)
 {
-	int a, i, nx, sum;
+int i, val;
+int n1 = 0, n2 = 1;
+int next = n1 + n2;
 
-	a = 1;
-	i = 0; 
-	nx = 0;
-	sum = 0;
+val = 9;
 
-	while (nx < 4000000)
-	{
-		nx = a + i;
-		i = a;
-		b = nx;
-		if (nx % 2 == 0)
-			sum += nx;
-	}
-	printf("%d\n", sum);
-	return (0);
+for (i = 0; i <= val; ++i)
+{
+printf("%d, ", next);
+n1 = n2;
+n2 = next;
+next = n1 + n2;
+}
+return (0);
 
 
 }
