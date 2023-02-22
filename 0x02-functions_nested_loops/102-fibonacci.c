@@ -27,12 +27,12 @@ else if (a == 1)
 {
 printf(", %ld", j);
 }
-else 
+else
 {
 j += i;
 i = j - i;
-printf(", %ld", j);	
-}	
+printf(", %ld", j);
+}
 ++a;
 }
 printf("\n");
