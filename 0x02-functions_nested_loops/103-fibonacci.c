@@ -17,12 +17,15 @@ int next = n1 + n2;
 
 val = 9;
 
+while (next < 4000000)
+{
 for (i = 0; i <= val; ++i)
 {
 printf("%d, ", next);
 n1 = n2;
 n2 = next;
 next = n1 + n2;
+}
 }
 return (0);
 
