@@ -17,7 +17,7 @@ long int i, j;
 a = 0;
 i = 1, j = 2;
 
-while ( a < 50)
+while (a < 50)
 {
 if (a == 0)
 {
