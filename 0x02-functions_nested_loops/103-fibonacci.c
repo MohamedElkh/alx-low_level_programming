@@ -11,18 +11,23 @@
 
 int main(void)
 {
-	int q = 0;
-	long i = 1, j = 2;
-	long sum = j;
+	int a, i, nx, sum;
 
-	while (j + i < 4000000)
+	a = 1;
+	i = 0; 
+	nx = 0;
+	sum = 0;
+
+	while (nx < 4000000)
 	{
-		j += i;
-	       if (j % 2 == 0)
-		       sum += j;
-		       i = j - i;
-			++q;	       
+		nx = a + i;
+		i = a;
+		b = nx;
+		if (nx % 2 == 0)
+			sum += nx;
 	}
-	printf("%ld\n", sum);
+	printf("%d\n", sum);
 	return (0);
+
+
 }
