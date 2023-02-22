@@ -5,10 +5,10 @@
  * @void: nothing .
  *
  * Description: prints the sum of all the multiples of 3 or 5 below 1024
- * Return: nothing .
+ * Return: 0 Always .
  */
 
-void main(void)
+int main(void)
 {
 	int a, i;
 
@@ -22,4 +22,5 @@ void main(void)
 		a++;
 	}
 	printf("%d\n", i);
+	return (0);
 }
