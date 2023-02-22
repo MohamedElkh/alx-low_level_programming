@@ -5,7 +5,7 @@
  * print_to_98 - prints all natural numbers from n to 98.
  * @n: the number to be checked .
  *
- * Description:Write a function that prints all natural numbers 
+ * Description:Write a function that prints all natural numbers
  * from n to 98, followed by a new line.
  * Return: nothing.
  */
