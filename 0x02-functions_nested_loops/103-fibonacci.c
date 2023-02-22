@@ -11,22 +11,18 @@
 
 int main(void)
 {
-int i, val;
-int n1 = 0, n2 = 1;
-int next = n1 + n2;
-
-val = 9;
+int i = 0, j = 1, next = 0;
+int sum = 0;
 
 while (next < 4000000)
 {
-for (i = 0; i <= val; ++i)
-{
-printf("%d, ", next);
-n1 = n2;
-n2 = next;
-next = n1 + n2;
+next = i + j;
+i = j;
+j = next;
+if (next % 2 == 0)
+sum += next;
 }
-}
+printf("%d\n", sum);
 return (0);
 
 
