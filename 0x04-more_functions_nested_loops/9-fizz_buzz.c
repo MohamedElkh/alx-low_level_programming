@@ -5,7 +5,7 @@
  * main - a function of The “Fizz-Buzz test”.
  * @void: nothing.
  *
- * Description: The “Fizz-Buzz test”a program that 
+ * Description: The “Fizz-Buzz test”a program that
  * prints the numbers from 1 to 100, followed by a new line.
  * Return: 0 Always.
  */
