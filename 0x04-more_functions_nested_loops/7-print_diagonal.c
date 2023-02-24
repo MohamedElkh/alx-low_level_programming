@@ -4,7 +4,7 @@
  * print_diagonal - a function that draws a diagonal line.
  * @n: the character to be checked.
  *
- * Description:a function that draws a diagonal line
+ * Description: a function that draws a diagonal line
  * on the terminal.
  * Return: nothing.
  */
