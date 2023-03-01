@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strncat - a function that concatenates two strings.
+ * _strncat - concatenates two strings.
  * @dest: the first pointer to be checked.
  * @src: the second pointer to be checked.
  * @n: the character to be checked.
@@ -12,9 +12,10 @@
 
 char *_strncat(char *dest, char *src, int n)
 {
+
 int i, a;
 
-for (i = 0; dest[i] != '\0'; )
+for (i = 0; dest[i] != '\0';)
 {
 i++;
 }
