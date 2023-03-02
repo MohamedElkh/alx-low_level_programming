@@ -11,6 +11,7 @@
 char *rot13(char *q)
 {
 int a, i;
+
 char input [] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 char output [] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
