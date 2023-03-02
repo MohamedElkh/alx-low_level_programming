@@ -10,23 +10,20 @@
 
 char *rot13(char *q)
 {
-	int a, i;
+int a, i;
+char input [] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char output [] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	char input [] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char output [] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-
-	for (a = 0; q[a] != '\0'; a++)
-	{
-		for (i = 0; input[i] != '\0'; i++)
-		{
-			if (q[a] == input[i])
-			{
-				q[a] = output[i];
-				break;
-			}
-		}
-	}
-	return (q);
-
-
+for (a = 0; q[a] != '\0'; a++)
+{
+for (i = 0; input[i] != '\0'; i++)
+{
+if (q[a] == input[i])
+{
+q[a] = output[i];
+break;
+}
+}
+}
+return (q);
 }
