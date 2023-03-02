@@ -4,6 +4,7 @@
  * _strncat - function that concatenates two strings.
  * @dest: first pointer to be checked.
  * @src: the second pointer to be checked.
+ * @n: the character to be checked.
  *
  * Description: a function that concatenates two strings.
  * Return: A pointer to give the result of dest.
