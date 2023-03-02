@@ -4,6 +4,7 @@
  * _strncpy - a function that copies a string.
  * @dest: the pointer to be checked.
  * @src: the second pointer to be checked.
+ * @n: the character to be checked.
  *
  * Description: Write a function that copies a string.
  * Return: the result of dest.
