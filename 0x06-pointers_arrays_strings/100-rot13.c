@@ -5,13 +5,12 @@
  * @q: the pointer to be checked.
  *
  * Description: a function that encodes a string using rot13.
- * Return: the result of q.
+ * Return: q .
  */
 
 char *rot13(char *q)
 {
 int a, i;
-
 char input [] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 char output [] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
