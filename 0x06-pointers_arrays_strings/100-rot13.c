@@ -11,16 +11,16 @@
 char *rot13(char *q)
 {
 int a, i;
-char input [] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-char output [] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+char in [] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char out [] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 for (a = 0; q[a] != '\0'; a++)
 {
-for (i = 0; input[i] != '\0'; i++)
+for (i = 0; in[i] != '\0'; i++)
 {
-if (q[a] == input[i])
+if (q[a] == in[i])
 {
-q[a] = output[i];
+q[a] = out[i];
 break;
 }
 }
