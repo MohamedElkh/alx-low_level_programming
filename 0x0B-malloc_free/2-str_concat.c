@@ -40,14 +40,13 @@ a++;
 }
 r = x + a;
 name = malloc((r * sizeof(char)) + 1);
-a = 0;
 
 if (name == NULL)
 {
 return (NULL);
 }
-else
-{
+a = 0;
+
 while (n < r)
 {
 if (n <= x)
@@ -60,7 +59,6 @@ name[n] = s2[a];
 a++;
 }
 n++;
-}
 }
 name[n] = '\0';
 return (name);
