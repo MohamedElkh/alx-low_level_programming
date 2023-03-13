@@ -27,6 +27,7 @@ while (s1[x] != '\0')
 x++;
 }
 }
+
 if (s2 == NULL)
 {
 s2 = "";
@@ -38,8 +39,10 @@ while (s2[a] != '\0')
 a++;
 }
 }
+
 r = x + a;
 name = malloc((r * sizeof(char)) + 1);
+a = 0;
 
 if (name == NULL)
 {
@@ -47,14 +50,13 @@ return (NULL);
 }
 else
 {
-a = 0;
-
 while (n < r)
 {
 if (n <= x)
 {
 name[n] = s1[n];
 }
+
 if (n >= x)
 {
 name[n] = s2[a];
