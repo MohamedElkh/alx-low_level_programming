@@ -15,8 +15,8 @@ char *str_concat(char *s1, char *s2)
 {
 
 int a, x, z, y;
-a = 0, x = 0, z = 0, y = 0;
 char *name;
+a = 0, x = 0, z = 0, y = 0;
 
 if (s1 == NULL)
 {
