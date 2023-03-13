@@ -19,9 +19,7 @@ if (size == 0)
 {
 return (NULL);
 }
-
 name = malloc(size * sizeof(char));
-
 if (name == NULL)
 {
 return NULL;
@@ -34,5 +32,6 @@ name[x] = c;
 }
 }
 return (name);
+
 
 }
