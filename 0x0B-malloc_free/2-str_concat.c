@@ -37,7 +37,8 @@ int count(char *y)
 
 char *str_concat(char *s1, char *s2)
 {
-	int i, a, val = 0;
+	unsigned int i, a;
+	int val = 0;
 	char *name;
 
 	if (s1 == NULL)
