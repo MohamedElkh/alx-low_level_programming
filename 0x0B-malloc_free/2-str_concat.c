@@ -27,7 +27,6 @@ while (s1[x] != '\0')
 x++;
 }
 }
-
 if (s2 == NULL)
 {
 s2 = "";
@@ -56,7 +55,6 @@ if (n <= x)
 {
 name[n] = s1[n];
 }
-
 if (n >= x)
 {
 name[n] = s2[a];
