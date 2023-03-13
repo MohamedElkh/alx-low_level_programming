@@ -6,7 +6,7 @@
  * @width: the character to be checked.
  * @height: the character to be checked
  *
- * Description: function that returns a pointer to a 2 
+ * Description: function that returns a pointer to a 2
  * dimensional array of integers.
  * Return: 0 Always.
  */
