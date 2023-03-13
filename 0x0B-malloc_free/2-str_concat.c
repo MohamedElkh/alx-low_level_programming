@@ -28,12 +28,12 @@ char *str_concat(char *s1, char *s2)
 		a++;
 
 	x = i + a;
-	name = malloc((x * sizeof(char)) +1);
-	
+	name = malloc((x * sizeof(char)) + 1);
+
 	if (name == NULL)
 		return (NULL);
 	a = 0;
-	
+
 while (z < x)
 {
 if (z <= i)
