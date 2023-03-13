@@ -13,13 +13,8 @@
 
 char *str_concat(char *s1, char *s2)
 {
-int x, a, r, n;
+int x = 0, a = 0, r = 0, n = 0;
 char *name;
-
-x = 0;
-a = 0;
-n = 0;
-r = 0;
 
 if (s1 == NULL)
 {
@@ -32,6 +27,7 @@ while (s1[x] != '\0')
 x++;
 }
 }
+
 if (s2 == NULL)
 {
 s2 = "";
@@ -43,8 +39,10 @@ while (s2[a] != '\0')
 a++;
 }
 }
+
 r = x + a;
 name = malloc((r * sizeof(char)) + 1);
+
 if (name == NULL)
 {
 return (NULL);
@@ -68,4 +66,5 @@ n++;
 }
 name[n] = '\0';
 return (name);
+
 }
