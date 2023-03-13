@@ -13,52 +13,51 @@
 
 char *str_concat(char *s1, char *s2)
 {
-int x = 0, a = 0, r = 0, n = 0;
-char *name;
+  int a, x, z, y;
+  char *name;
 
-if (s1 == NULL)
-{
-s1 = "";
-}
+  a = 0, x = 0, z = 0, y = 0;
 
-while (s1[x])
-{
-x++;
-}
+  if (s1 == NULL)
+  {
+	  s1 = "";
+  }
+  else if (s1 != NULL) 
+  {
+	  while(s1[a] != '\0')
+		a++;
+  }
 
-if (s2 == NULL)
-{
-s2 = "";
-}
+  if (s2 == NULL)
+  {
+	  s2 = "";
+  }
+  else if (s2 != NULL)
+  {
+	  while(s2[x] != '\0')
+		  x++;
+  }
 
-while (s2[a])
-{
-a++;
-}
+  z = a + x;
+  name = malloc((sizeof(char) * z) + 1);
 
-r = x + a;
-name = malloc((r * sizeof(char)) + 1);
+  if (name == NULL)
+	  return (NULL);
 
-if (name == NULL)
-{
-return (NULL);
-}
+  x = 0;
+	
+  while (y < z)
+  {
+	  if (y <= a)
+		  name[y] = s1[y];
+	  if (y >= a)
+	  {
+		  name[y] = s2[x];
+		  x++;
+	  }
+	  y++;
+  }
+  name[y] = '\0';
+  return (name);
 
-a = 0;
-
-while (n < r)
-{
-if (n <= x)
-{
-name[n] = s1[n];
-}
-if (n >= x)
-{
-name[n] = s2[a];
-a++;
-}
-n++;
-}
-name[n] = '\0';
-return (name);
 }
