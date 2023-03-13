@@ -59,6 +59,7 @@ a++;
 }
 n++;
 }
+
 name[n] = '\0';
 return (name);
 }
