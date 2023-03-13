@@ -24,14 +24,9 @@ if (name == NULL)
 {
 return NULL;
 }
-else
-{
 for (x = 0; x < size; x++)
 {
 name[x] = c;
 }
-}
 return (name);
-
-
 }
