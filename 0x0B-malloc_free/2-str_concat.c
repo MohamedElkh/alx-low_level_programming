@@ -1,30 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
-
-/**
- * count - a function to return the length of string.
- * @y: the character to be checked.
- *
- * Return: the length of string.
- */
-
-int count(char *y)
-{
-        int i = 0;
-
-        if (!*y == 0)
-        {
-                return (0);
-        }
-
-        while (*y != '\0')
-        {
-                i++;
-                y++;
-        }
-        return (i);
-}
 
 /**
  * str_concat - a function that concatenates two strings.
@@ -37,28 +12,43 @@ int count(char *y)
 
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int i, a;
-	int val = 0;
+	unsigned int i = 0, a = 0, x = 0, z = 0;
 	char *name;
 
 	if (s1 == NULL)
 		s1 = "";
+
 	if (s2 == NULL)
 		s2 = "";
-	val += count(s1) + count(s2);
-	name = malloc((val * sizeof(char)) +1);
 
+	while (s1[i])
+		i++;
+
+	while (s2[a])
+		a++;
+
+	x = i + a;
+	name = malloc((x * sizeof(char)) +1);
+	
 	if (name == NULL)
 		return (NULL);
-	for (i = 0; s1[i] != '\0'; i++)
-	{
-		name[i] = s1[i];
-	}
-	for (a = 0; s2[a] != '\0'; i++, a++)
-	{
-		name[i] = s2[a];
-	}
-	name[i] = '\0';
-	return (name);
+	a = 0;
+	
+while (z < x)
+{
+if (z <= i)
+{
+name[z] = s1[z];
+}
+if (z >= i)
+{
+name[z] = s2[a];
+a++;
+}
+z++;
+}
+name[z] = '\0';
+return (name);
+
 }
 
