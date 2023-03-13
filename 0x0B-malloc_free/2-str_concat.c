@@ -38,7 +38,6 @@ while (s2[a] != '\0')
 a++;
 }
 }
-
 r = x + a;
 name = malloc((r * sizeof(char)) + 1);
 a = 0;
@@ -65,6 +64,4 @@ n++;
 }
 name[n] = '\0';
 return (name);
-
-
 }
