@@ -3,6 +3,30 @@
 #include <stdio.h>
 
 /**
+ * count - a function to return the length of string.
+ * @y: the character to be checked.
+ *
+ * Return: the length of string.
+ */
+
+int count(char *y)
+{
+        int i = 0;
+
+        if (!*y == 0)
+        {
+                return (0);
+        }
+
+        while (*y != '\0')
+        {
+                i++;
+                y++;
+        }
+        return (i);
+}
+
+/**
  * str_concat - a function that concatenates two strings.
  * @s1: the character to be checked.
  * @s2: the character to be checked.
@@ -13,52 +37,27 @@
 
 char *str_concat(char *s1, char *s2)
 {
+	int i, a, val = 0;
+	char *name;
 
-int a, x, z, y;
-char *name;
-a = 0, x = 0, z = 0, y = 0;
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	val += count(s1) + count(s2);
+	name = malloc((val * sizeof(char)) +1);
 
-if (s1 == NULL)
-{
-s1 = "";
+	if (name == NULL)
+		return (NULL);
+	for (i = 0; s1[i] != '\0'; i++)
+	{
+		name[i] = s1[i];
+	}
+	for (a = 0; s2[a] != '\0'; i++, a++)
+	{
+		name[i] = s2[a];
+	}
+	name[i] = '\0';
+	return (name);
 }
 
-if (s1 != NULL)
-{
-while (s1[a] != '\0')
-a++;
-}
-
-if (s2 == NULL)
-{
-s2 = "";
-}
-
-if (s2 != NULL)
-{
-while (s2[x] != '\0')
-x++;
-}
-
-z = a + x;
-name = malloc((sizeof(char) * z) +1);
-
-if (name == NULL)
-return (NULL);
-x = 0;
-
-while (y < z)
-{
-if (y <= a)
-name[y] = s1[y];
-if (y >= a)
-{
-name[y] = s2[x];
-x++;
-}
-y++;
-}
-name[y] = '\0';
-return (name);
-
-}
