@@ -22,7 +22,7 @@ if (s1 == NULL)
 {
 s1 = "";
 }
-else if (s1 != NULL)
+if (s1 != NULL)
 {
 while (s1[a] != '\0')
 a++;
@@ -31,7 +31,7 @@ if (s2 == NULL)
 {
 s2 = "";
 }
-else if (s2 != NULL)
+if (s2 != NULL)
 {
 while (s2[x] != '\0')
 x++;
