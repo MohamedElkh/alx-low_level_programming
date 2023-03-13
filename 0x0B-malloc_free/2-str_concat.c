@@ -21,7 +21,7 @@ if (s1 == NULL)
 s1 = "";
 }
 
-while (s1[x] != '\0')
+while (s1[x])
 {
 x++;
 }
@@ -31,7 +31,7 @@ if (s2 == NULL)
 s2 = "";
 }
 
-while (s2[a] != '\0')
+while (s2[a])
 {
 a++;
 }
@@ -59,7 +59,6 @@ a++;
 }
 n++;
 }
-
 name[n] = '\0';
 return (name);
 }
