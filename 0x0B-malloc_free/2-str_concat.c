@@ -37,7 +37,7 @@ while (s2[x] != '\0')
 x++;
 }
 z = a + x;
-name = malloc((sizeof(char) * z) + 1);
+name = malloc((sizeof(char) * z) +1);
 
 if (name == NULL)
 return (NULL);
