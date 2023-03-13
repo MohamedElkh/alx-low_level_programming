@@ -22,20 +22,24 @@ if (s1 == NULL)
 {
 s1 = "";
 }
+
 if (s1 != NULL)
 {
 while (s1[a] != '\0')
 a++;
 }
+
 if (s2 == NULL)
 {
 s2 = "";
 }
+
 if (s2 != NULL)
 {
 while (s2[x] != '\0')
 x++;
 }
+
 z = a + x;
 name = malloc((sizeof(char) * z) +1);
 
