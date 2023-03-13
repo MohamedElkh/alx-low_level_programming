@@ -20,23 +20,20 @@ if (s1 == NULL)
 {
 s1 = "";
 }
-else
-{
+
 while (s1[x] != '\0')
 {
 x++;
 }
-}
+
 if (s2 == NULL)
 {
 s2 = "";
 }
-else
-{
+
 while (s2[a] != '\0')
 {
 a++;
-}
 }
 r = x + a;
 name = malloc((r * sizeof(char)) + 1);
