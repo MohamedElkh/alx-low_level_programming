@@ -7,7 +7,7 @@
  * @c: the character to be checked.
  *
  * Description: a function that creates an array of chars
- * Return: 0 Always.
+ * Return: fails.
  */
 
 char *create_array(unsigned int size, char c)
