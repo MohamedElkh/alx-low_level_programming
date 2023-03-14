@@ -13,7 +13,7 @@
 
 char *argstostr(int ac, char **av)
 {
-	int i = 0, j = 0, x = 0,val = 0;
+	int i = 0, j = 0, x = 0, val = 0;
 	char *name;
 
 	if (ac == 0 || av == NULL)
@@ -36,7 +36,7 @@ char *argstostr(int ac, char **av)
 	if (name == NULL)
 	{
 		return (NULL);
-	}		
+	}
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; *(*(av + i) + j) != '\0'; j++)
