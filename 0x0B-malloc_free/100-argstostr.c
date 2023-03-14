@@ -32,14 +32,11 @@ char *argstostr(int ac, char **av)
 	}
 	}
 	val++;
-
 	name = malloc(val * sizeof(char));
 	if (name == NULL)
 	{
 		return (NULL);
-	}
-	else
-	{
+	}		
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; *(*(av + i) + j) != '\0'; j++)
@@ -50,10 +47,8 @@ char *argstostr(int ac, char **av)
 		name[x] = '\n';
 		x++;
 	}
-	}
 	x++;
 	name[x] = '\0';
-
 	return (name);
 }
 
