@@ -20,13 +20,11 @@ char *str_concat(char *s1, char *s2)
 		s1 = "";
 		s2 = "";
 	}
-	else
-	{
 	while (s1[i] != '\0')
 		i++;
 	while (s2[a] != '\0')
 		a++;
-	}
+
 	x = i + a;
 	name = malloc((x * sizeof(char)) + 1);
 
