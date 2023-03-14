@@ -15,18 +15,18 @@ char *str_concat(char *s1, char *s2)
 	unsigned int i = 0, a = 0, x = 0, z = 0;
 	char *name;
 
-	if (s1 == NULL)
+	if (s1 == NULL && s2 == NULL)
+	{
 		s1 = "";
-
-	if (s2 == NULL)
 		s2 = "";
-
-	while (s1[i])
+	}
+	else
+	{
+	while (s1[i] != '\0')
 		i++;
-
-	while (s2[a])
+	while (s2[a] != '\0')
 		a++;
-
+	}
 	x = i + a;
 	name = malloc((x * sizeof(char)) + 1);
 
