@@ -21,17 +21,15 @@ s1 = "";
 while (s1[i] != '\0')
 i++;
 if (s2 == NULL)
-	s2 = "";
+s2 = "";
 while (s2[a] != '\0')
 a++;
-
 if (n >= a)
 x = i + a;
 else
 x = i + n;
 
 value = malloc((x * sizeof(char)) + 1);
-
 if (value == NULL)
 return (NULL);
 a = 0;
@@ -49,5 +47,4 @@ j++;
 }
 value[j] = '\0';
 return (value);
-
 }
