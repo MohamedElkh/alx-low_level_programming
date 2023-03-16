@@ -29,11 +29,11 @@ x = i + a;
 else
 x = i + n;
 
-value = malloc((x * sizeof(char)) + 1);
+value = malloc(sizeof(char) * x + 1);
 if (value == NULL)
 return (NULL);
-a = 0;
 
+a = 0;
 while (j < x)
 {
 if (j <= i)
