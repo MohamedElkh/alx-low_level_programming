@@ -8,7 +8,7 @@
  * n: the character to be checked
  *
  * Description: a function that concatenates two strings.
- * Return: 0 Always.
+ * Return: result Always.
  */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
@@ -18,15 +18,21 @@ char *value;
 
 if (s1 == NULL)
 s1 = "";
+
 while (s1[i] != '\0')
 i++;
+
 if (s2 == NULL)
 s2 = "";
+
 while (s2[a] != '\0')
 a++;
+
 if (n >= a)
 x = i + a;
+
 else
+
 x = i + n;
 
 value = malloc(sizeof(char) * x + 1);
@@ -38,6 +44,7 @@ while (j < x)
 {
 if (j <= i)
 value[j] = s1[j];
+
 if (j >= i)
 {
 value[j] = s2[a];
