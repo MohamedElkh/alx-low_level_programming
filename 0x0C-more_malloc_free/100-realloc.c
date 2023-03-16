@@ -39,7 +39,7 @@ return (NULL);
 val = malloc(new_size);
 
 if (val == NULL)
-eturn (NULL);
+return (NULL);
 
 x = 0;
 while (x < old_size && x < new_size)
