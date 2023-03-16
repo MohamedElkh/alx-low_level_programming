@@ -33,13 +33,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		y = x + n;
 
 	val = malloc(sizeof(char) * y + 1);
+
+	a = 0;
 	if (val == NULL)
 	{
 		return (NULL);
 	}
 	else
 	{
-	a = 0;
 	while (p < y)
 	{
 		if (p <= x)
