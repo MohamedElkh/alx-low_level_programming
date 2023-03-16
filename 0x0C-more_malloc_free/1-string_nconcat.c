@@ -10,6 +10,7 @@
   * Description: a function that concatenates two strings.
   * Return: the result
   */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int x = 0, j = 0, a = 0, l = 0;
@@ -35,7 +36,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (val == NULL)
 		return (NULL);
 
-	x = 0;
+	a = 0;
 	while (j < l)
 	{
 		if (j <= x)
