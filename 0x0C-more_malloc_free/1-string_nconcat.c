@@ -19,21 +19,21 @@ char *value;
 if (s1 == NULL)
 s1 = "";
 
+if (s2 == NULL)
+	s2 = "";
 while (s1[i] != '\0')
 i++;
-
-if (s2 == NULL)
-s2 = "";
-
 while (s2[a] != '\0')
 a++;
 
 if (n >= a)
+{
 x = i + a;
-
+}
 else
-
+{
 x = i + n;
+}
 
 value = malloc(sizeof(char) * x + 1);
 if (value == NULL)
