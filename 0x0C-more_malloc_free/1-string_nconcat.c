@@ -13,45 +13,44 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-unsigned int i = 0, a = 0, x = 0, j = 0;
-char *value;
+unsigned int i = 0, a = 0, x = 0, z = 0;
+char *name;
 
 if (s1 == NULL)
 s1 = "";
-
-if (s2 == NULL)
-	s2 = "";
 while (s1[i] != '\0')
 i++;
+if (s2 == NULL)
+s2 = "";
+
 while (s2[a] != '\0')
 a++;
 
-if (n >= a)
+        if (n >= a)
+		x = i + a;
+	else
+		x = i + n;
+
+        name = malloc((x * sizeof(char)) + 1);
+
+        if (name == NULL)
+                return (NULL);
+        a = 0;
+
+while (z < x)
 {
-x = i + a;
+if (z <= i)
+{
+name[z] = s1[z];
 }
-else
+if (z >= i)
 {
-x = i + n;
-}
-
-value = malloc(sizeof(char) * x + 1);
-if (value == NULL)
-return (NULL);
-
-a = 0;
-while (j < x)
-{
-if (j <= i)
-value[j] = s1[j];
-
-if (j >= i)
-{
-value[j] = s2[a];
+name[z] = s2[a];
 a++;
 }
-j++;
+z++;
 }
-value[j] = '\0';
-return (value);
+name[z] = '\0';
+return (name);
+
 }
