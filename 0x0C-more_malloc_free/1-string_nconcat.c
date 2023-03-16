@@ -1,20 +1,18 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
- * string_nconcat - a function that concatenates two strings.
- * @s1: the first pointer to be checked
- * @s2: the second pointer to be checked
- * n: the character to be checked
- *
- * Description: a function that concatenates two strings.
- * Return: result Always.
- */
-
+  * string_nconcat -  a function that concatenates two strings.
+  * @s1: pointer to be checked
+  * @s2: pointer to be checked
+  * @n: character to be checked
+  *
+  * Description: a function that concatenates two strings.
+  * Return: the result
+  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i = 0, a = 0, x = 0, j = 0;
+	unsigned int x = 0, j = 0, a = 0, l = 0;
 	char *val;
 
 	if (s1 == NULL)
@@ -22,39 +20,34 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 
-	while (s1[i])
-		i++;
+	while (s1[x])
+		x++;
 
 	while (s2[a])
 		a++;
 
 	if (n >= a)
-		x = i + a;
+		l = x + a;
 	else
-		x = i + n;
+		l = x + n;
 
-	val = malloc((x * sizeof(char)) + 1);
-	a = 0;
-
+	val = malloc(sizeof(char) * l + 1);
 	if (val == NULL)
-	{
 		return (NULL);
-	}
-	else
+
+	x = 0;
+	while (j < l)
 	{
-		while (j < x)
+		if (j <= x)
+			val[j] = s1[j];
+
+		if (j >= x)
 		{
-			if (j <= i)
-				val[j] = s1[j];
-			if (j >= i)
-			{
-				val[j] = s2[a];
-				a++;
-			}
-			j++;
+			val[j] = s2[a];
+			a++;
 		}
-		val[j] = '\0';
+		j++;
 	}
+	val[j] = '\0';
 	return (val);
 }
-
