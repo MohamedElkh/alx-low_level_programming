@@ -31,6 +31,7 @@ if (n >= a)
 x = i + a;
 else
 x = i + n;
+
 name = malloc(sizeof(char) * x + 1);
 if (name == NULL)
 return (NULL);
