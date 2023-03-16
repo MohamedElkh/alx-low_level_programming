@@ -31,7 +31,7 @@ a++;
 	else
 		x = i + n;
 
-        name = malloc((x * sizeof(char)) + 1);
+        name = malloc(sizeof(char) * x + 1);
 
         if (name == NULL)
                 return (NULL);
