@@ -41,7 +41,7 @@ int check(char *c)
 
 /**
  * error - a function to check errors.
- *@void: nothing.
+ * @void: nothing.
  *
  * Return: nothing.
  */
@@ -57,7 +57,7 @@ void error(void)
  * @argc: the number of args
  * @argv: the array.
  *
- * Return: the result.
+ * Return: 0 Always.
  */
 
 int main(int argc, char *argv[])
