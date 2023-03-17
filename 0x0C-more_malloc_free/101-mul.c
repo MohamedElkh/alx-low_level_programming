@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
 	l1 = countNumber(res1);
 	l2 = countNumber(res2);
 	l = l1 + l2 + 1;
-	res = malloc(l * sizeof(int));
+	res = malloc(sizeof(int) * l);
 	if (!res)
 		return (1);
 	for (i = 0; i <= l1 + l2; i++)
