@@ -2,12 +2,12 @@
 #define _NAME_
 
 /**
- * struck dog - it type of functions
+ * struct dog - it type of functions
  * @name: string
  * @age: float
  * @owner: string
  *
- * Description: its a struck
+ * Description: its a struct
  */
 typedef struct dog
 {
