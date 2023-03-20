@@ -3,13 +3,13 @@
 #include <stdlib.h>
 
 /**
- * _count - a function to count the length of st
+ * _strlen - a function to count the length of st
  * @d: the character to be checked.
  *
  * Return: the result.
  */
 
-int _count(char *d)
+int _strlen(char *d)
 {
 	int i = 0;
 
@@ -41,9 +41,6 @@ char *_copy(char *s, char *c)
 	return (s);
 }
 
-int _count(char *d);
-char *_copy(char *s, char *c);
-
 /**
  * new_dog - a function that creates a new dog.
  * @name: the string.
@@ -70,7 +67,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	else
 	{
-		(*d).name = malloc(_count(name) + 1);
+		(*d).name = malloc(_strlen(name) + 1);
 		if ((*d).name == NULL)
 		{
 			free(d);
@@ -84,7 +81,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	else
 	{
-		(*d).owner = malloc(_count(owner) + 1);
+		(*d).owner = malloc(_strlen(owner) + 1);
 		if ((*d).owner == NULL)
 		{
 			free((*d).name);
