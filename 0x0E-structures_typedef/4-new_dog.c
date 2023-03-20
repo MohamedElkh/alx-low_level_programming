@@ -2,9 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int _count(char *d);
-char *_copy(char *s, char *c);
-
 /**
  * _count - a function to count the length of st
  * @d: the character to be checked.
@@ -43,6 +40,9 @@ char *_copy(char *s, char *c)
 	s[x++] = '\0';
 	return (s);
 }
+
+int _count(char *d);
+char *_copy(char *s, char *c);
 
 /**
  * new_dog - a function that creates a new dog.
