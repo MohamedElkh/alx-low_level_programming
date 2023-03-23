@@ -4,7 +4,7 @@
 
 /**
  * print_numbers - a function that prints numbers with new line
- * @separator - string
+ * @separator: string
  * @n: the number of integers
  *
  * Return: the result.
