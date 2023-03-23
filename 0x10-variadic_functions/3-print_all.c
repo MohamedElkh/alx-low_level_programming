@@ -58,10 +58,7 @@ void p_ptr(char *value, va_list vals)
 		printf("%s%s", value, "(nil)");
 		return;
 	}
-	else
-	{
-		printf("%s%s", value, val);
-	}
+	printf("%s%s", value, val);
 }
 
 /**
