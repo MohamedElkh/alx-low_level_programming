@@ -16,7 +16,7 @@ size_t print_list(const list_t *h)
 	const list_t *val = h;
 	size_t length = 0;
 
-	for (x = 0; val != NULL; x++)
+	for (x = 0; val; x++)
 	{
 		if (val->str == NULL)
 		{
@@ -30,4 +30,5 @@ size_t print_list(const list_t *h)
 		length++;
 	}
 	return (length);
+
 }
