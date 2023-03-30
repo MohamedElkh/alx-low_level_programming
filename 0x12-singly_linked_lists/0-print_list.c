@@ -5,6 +5,7 @@
 
 /**
  * print_list - function that prints all the elements.
+ * @list_t: struct
  * @h: the pointer to be checked.
  *
  * Description: function that prints all the elements
