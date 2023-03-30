@@ -1,5 +1,5 @@
-#ifndef MOHAMED
-#define MOHAMED
+#ifndef _LISTS_H
+#define _LISTS_H
 
 #include <stddef.h>
 #include <stdlib.h>
@@ -29,4 +29,4 @@ void free_list(list_t *head);
 int _strlength(const char *n);
 int _putchar(char c);
 
-#endif /*MOHAMED*/
+#endif /*_LISTS_H*/
