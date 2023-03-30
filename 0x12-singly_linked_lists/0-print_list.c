@@ -7,12 +7,13 @@
  * print_list - a function that prints all the elements
  * @h: the pointer of struct.
  *
+ * Description: a function that prints all the elements
  * Return: the result.
  */
 
 size_t print_list(const list_t *h)
 {
-	size_t x;
+        int x;
 	const list_t *val = h;
 	size_t length = 0;
 
