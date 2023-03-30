@@ -1,8 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "lists.h"
 
 /**
- * print_list - function that prints all the elements
+ * print_list - function that prints all the elements.
  * @h: the pointer to be checked.
  *
  * Description: function that prints all the elements
@@ -17,7 +19,7 @@ size_t print_list(const list_t *h)
 	{
 		if (h->str == NULL)
 		{
-			printf("[0] (nil)\n");
+			printf("[%d] %s\n", 0, "(nil)");
 		}
 		else
 		{
