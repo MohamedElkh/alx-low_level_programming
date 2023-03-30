@@ -2,7 +2,7 @@
 
 /**
  * _strlength - function to return the length
- * n: the character to be checked.
+ * @n: the character to be checked.
  *
  * Return: the result.
  */
@@ -34,7 +34,7 @@ list_t *add_node(list_t **head, const char *str)
 
 	if (head != NULL && str != NULL)
 	{
-		value = malloc(sizeof(list_t));
+		value = (list_t*) malloc(sizeof(list_t));
 		if (value == NULL)
 			return (NULL);
 
