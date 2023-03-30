@@ -11,8 +11,7 @@
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *new_value;
-	list_t *val;
+	list_t *new_value, *val;
 
 	if (str != NULL)
 	{
