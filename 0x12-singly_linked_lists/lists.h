@@ -1,5 +1,5 @@
-#ifndef _linked_
-#define _linked_
+#ifndef _NAME_
+#define _NAME_
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
