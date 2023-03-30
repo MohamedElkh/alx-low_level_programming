@@ -7,7 +7,6 @@
  * Description: a function that prints all the elements
  * Return: the result.
  */
-
 size_t print_list(const list_t *h)
 {
         int x;
