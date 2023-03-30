@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "lists.h"
 
 /**
  * print_list - function that prints all the elements.
- * @list_t: struct
- * @h: the pointer to be checked.
+ * @h: A linked list.
  *
  * Description: function that prints all the elements
  * Return: the number of nodes
