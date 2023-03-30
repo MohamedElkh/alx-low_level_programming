@@ -1,6 +1,5 @@
-#ifndef _LISTS_H
-#define _LISTS_H
-
+#ifndef _LINKED_LISTS
+#define _LINKED_LISTS
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,6 +12,7 @@
  * @next: points to the next node
  *
  * Description: singly linked list node structure
+ * for ALX project
  */
 typedef struct list_s
 {
@@ -29,4 +29,4 @@ void free_list(list_t *head);
 int _strlength(const char *n);
 int _putchar(char c);
 
-#endif /*_LISTS_H*/
+#endif /*_LINKED_LISTS*/
