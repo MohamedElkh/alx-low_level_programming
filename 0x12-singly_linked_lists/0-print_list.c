@@ -1,4 +1,6 @@
 #include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * print_list - function that prints all the elements
@@ -21,8 +23,8 @@ else
 {
 printf("[%d] %s\n", h->len, h->str);
 }
-h = h->next;
 value++;
+h = h->next;
 }
 return (value);
 }
