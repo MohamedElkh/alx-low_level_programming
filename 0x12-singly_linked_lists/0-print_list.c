@@ -11,8 +11,7 @@
 
 size_t print_list(const list_t *h)
 {
-	unsigned int x;
-	size_t li = 0;
+	size_t x, li = 0;
 
 	for (x = 0; h != NULL; x++)
 	{
