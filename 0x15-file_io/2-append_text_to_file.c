@@ -30,7 +30,7 @@ int append_text_to_file(const char *filename, char *text_content)
 {
 	int fx;
 
-	if (filename == NULL)
+	if (!filename)
 	{
 		return (-1);
 	}
