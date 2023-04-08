@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * -count - function the count the length
- *  @n: the character to be checked.
+ * _count - function the count the length
+ * @n: the character to be checked.
  *
- *  Return: the length
+ * Return: the length
  */
 
 int _count(const char *n)
