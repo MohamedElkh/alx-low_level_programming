@@ -10,6 +10,31 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+
+/**
+ * elf_check - function if a file is an Elf file.
+ * @e_ident: array pointer containg the elf magic numbers
+ *
+ * Description: if the file not elf file then exit code 98
+ */
+
+void elf_check(unsigned char *e_ident)
+{
+        int i;
+
+        for (i = 0; i < 4; i++)
+        {
+                if (e_ident[i] != 127 &&
+                    e_ident[i] != 'E' &&
+                    e_ident[i] != 'L' &&
+                    e_ident[i] != 'F')
+                {
+                        dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
+                        exit(98);
+                }
+        }
+}
+
 /**
  * p_magic - print the magic numbers of an ELF header.
  * @e_ident: a pointer array containing the Elf magic numbers.
@@ -34,30 +59,6 @@ void p_magic(unsigned char *e_ident)
 		else
 		{
 			printf(" ");
-		}
-	}
-}
-
-/**
- * elf_check - function if a file is an Elf file.
- * @e_ident: array pointer containg the elf magic numbers
- *
- * Description: if the file not elf file then exit code 98
- */
-
-void elf_check(unsigned char *e_ident)
-{
-	int i;
-
-	for (i = 0; i < 4; i++)
-	{
-		if (e_ident[i] != 127 &&
-		    e_ident[i] != 'E' &&
-		    e_ident[i] != 'L' &&
-	            e_ident[i] != 'F')
-		{
-			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
-			exit(98);
 		}
 	}
 }
@@ -134,16 +135,6 @@ void p_version(unsigned char *e_ident)
 	}
 }
 
-/**
- * p_abi - function the abi version of an elf header
- * @e_ident: pointer of an array containing the elf version
- */
-
-void p_abi(unsigned char *e_ident)
-{
-        printf(" ABI Version:                 %d\n", e_ident[EI_ABIVERSION])
-}
-
 
 /**
  * p_osABI - function to print os/abi of an elf header
@@ -191,6 +182,16 @@ void p_osABI(unsigned char *e_ident)
 	}
 }
 
+/**
+ * p_abi - function the abi version of an elf header
+ * @e_ident: pointer of an array containing the elf version
+ */
+
+void p_abi(unsigned char *e_ident)
+{
+        printf(" ABI Version:                 %d\n", e_ident[EI_ABIVERSION])
+}
+
 
 /**
  * p_type - function to print the type of elf header
@@ -229,23 +230,6 @@ void p_type(unsigned int e_type, unsigned char *e_ident)
 	}
 }
 
-
-/**
- * elf_close - function to close the elf file
- * @elf: the file
- *
- * Description: if the file can not be closed then exit code 98
- */
-
-void elf_close(int elf)
-{
-        if (close(elf) == -1)
-        {
-                dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", elf);
-                exit(98);
-        }
-}
-
 /**
  * p_entry - function to print the entry point of elf header
  * @e_entry: the address of elf
@@ -270,6 +254,22 @@ void p_entry(unsigned long int e_entry, unsigned char *e_ident)
 	{
 		printf("%#lx\n", e_entry);
 	}
+}
+
+/**
+ * elf_close - function to close the elf file
+ * @elf: the file
+ *
+ * Description: if the file can not be closed then exit code 98
+ */
+
+void elf_close(int elf)
+{
+        if (close(elf) == -1)
+        {
+                dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", elf);
+                exit(98);
+        }
 }
 
 
