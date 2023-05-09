@@ -3,10 +3,10 @@
  * Auth: Mohamed Elkharashy
  */
 
+#include <elf.h>
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <elf.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -20,14 +20,14 @@
 
 void elf_check(unsigned char *e_ident)
 {
-        int i;
+        int x;
 
-        for (i = 0; i < 4; i++)
+        for (x = 0; x < 4; x++)
         {
-                if (e_ident[i] != 127 &&
-                    e_ident[i] != 'E' &&
-                    e_ident[i] != 'L' &&
-                    e_ident[i] != 'F')
+                if (e_ident[x] != 127 &&
+                    e_ident[x] != 'E' &&
+                    e_ident[x] != 'L' &&
+                    e_ident[x] != 'F')
                 {
                         dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
                         exit(98);
@@ -44,15 +44,15 @@ void elf_check(unsigned char *e_ident)
 
 void p_magic(unsigned char *e_ident)
 {
-	int x;
+	int y;
 
 	printf(" Magic:  ");
 
-	for (x = 0; x < EI_NIDENT; x++)
+	for (y = 0; y < EI_NIDENT; y++)
 	{
-		printf("%02x", e_ident[x]);
+		printf("%02x", e_ident[y]);
 
-		if (x == EI_NIDENT - 1)
+		if (y == EI_NIDENT - 1)
 		{
 			printf("\n");
 		}
@@ -122,7 +122,7 @@ void p_data(unsigned char *e_ident)
 
 void p_version(unsigned char *e_ident)
 {
-	printf(" Version:                    %d",  e_ident[EI_VERSION]);
+	printf(" Version:                    %d", e_ident[EI_VERSION]);
 
 	switch (e_ident[EI_VERSION])
 	{
@@ -189,7 +189,7 @@ void p_osABI(unsigned char *e_ident)
 
 void p_abi(unsigned char *e_ident)
 {
-        printf(" ABI Version:                 %d\n", e_ident[EI_ABIVERSION])
+        printf(" ABI Version:                 %d\n", e_ident[EI_ABIVERSION]);
 }
 
 
@@ -318,7 +318,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(98);
 	}
 
-	  elf_close(header->e_ident);
+	  elf_check(header->e_ident);
 	  printf("ELF Header:\n");
 
 	  p_magic(header->e_ident);
