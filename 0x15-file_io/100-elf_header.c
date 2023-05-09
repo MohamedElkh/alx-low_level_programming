@@ -91,6 +91,27 @@ void p_class(unsigned char *e_ident)
 }
 
 /**
+ * p_version - function to print the version of an elf header
+ * @e_ident: a pointer array containing the elf version
+ */
+
+void p_version(unsigned char *e_ident)
+{
+        printf(" Version:                    %d", e_ident[EI_VERSION]);
+
+        switch (e_ident[EI_VERSION])
+        {
+                case EV_CURRENT:
+                        printf(" (current)\n");
+                        break;
+                default:
+                        printf("\n");
+                        break;
+        }
+}
+
+
+/**
  * p_data - function to print the data of elf header
  * @e_ident: pointer to array
  */
@@ -115,24 +136,15 @@ void p_data(unsigned char *e_ident)
 	}
 }
 
+
 /**
- * p_version - function to print the version of an elf header
- * @e_ident: a pointer array containing the elf version
+ * p_abi - function the abi version of an elf header
+ * @e_ident: pointer of an array containing the elf version
  */
 
-void p_version(unsigned char *e_ident)
+void p_abi(unsigned char *e_ident)
 {
-	printf(" Version:                    %d", e_ident[EI_VERSION]);
-
-	switch (e_ident[EI_VERSION])
-	{
-		case EV_CURRENT:
-			printf(" (current)\n");
-			break;
-		default:
-			printf("\n");
-			break;
-	}
+        printf(" ABI Version:                 %d\n", e_ident[EI_ABIVERSION]);
 }
 
 
@@ -182,16 +194,6 @@ void p_osABI(unsigned char *e_ident)
 	}
 }
 
-/**
- * p_abi - function the abi version of an elf header
- * @e_ident: pointer of an array containing the elf version
- */
-
-void p_abi(unsigned char *e_ident)
-{
-        printf(" ABI Version:                 %d\n", e_ident[EI_ABIVERSION]);
-}
-
 
 /**
  * p_type - function to print the type of elf header
@@ -231,6 +233,23 @@ void p_type(unsigned int e_type, unsigned char *e_ident)
 }
 
 /**
+ * elf_close - function to close the elf file
+ * @elf: the file
+ *
+ * Description: if the file can not be closed then exit code 98
+ */
+
+void elf_close(int elf)
+{
+        if (close(elf) == -1)
+        {
+                dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", elf);
+                exit(98);
+        }
+}
+
+
+/**
  * p_entry - function to print the entry point of elf header
  * @e_entry: the address of elf
  * @e_ident: the pointer of array
@@ -254,22 +273,6 @@ void p_entry(unsigned long int e_entry, unsigned char *e_ident)
 	{
 		printf("%#lx\n", e_entry);
 	}
-}
-
-/**
- * elf_close - function to close the elf file
- * @elf: the file
- *
- * Description: if the file can not be closed then exit code 98
- */
-
-void elf_close(int elf)
-{
-        if (close(elf) == -1)
-        {
-                dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", elf);
-                exit(98);
-        }
 }
 
 
