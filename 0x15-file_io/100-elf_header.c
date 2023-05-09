@@ -20,19 +20,19 @@
 
 void elf_check(unsigned char *e_ident)
 {
-        int x;
+	int x;
 
-        for (x = 0; x < 4; x++)
-        {
-                if (e_ident[x] != 127 &&
-                    e_ident[x] != 'E' &&
-                    e_ident[x] != 'L' &&
-                    e_ident[x] != 'F')
-                {
-                        dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
-                        exit(98);
-                }
-        }
+	for (x = 0; x < 4; x++)
+	{
+		if (e_ident[x] != 127 &&
+				e_ident[x] != 'E' &&
+				e_ident[x] != 'L' &&
+				e_ident[x] != 'F')
+		{
+			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
+			exit(98);
+		}
+	}
 }
 
 /**
@@ -97,17 +97,17 @@ void p_class(unsigned char *e_ident)
 
 void p_version(unsigned char *e_ident)
 {
-        printf(" Version:                    %d", e_ident[EI_VERSION]);
+	printf(" Version:                    %d", e_ident[EI_VERSION]);
 
-        switch (e_ident[EI_VERSION])
-        {
-                case EV_CURRENT:
-                        printf(" (current)\n");
-                        break;
-                default:
-                        printf("\n");
-                        break;
-        }
+	switch (e_ident[EI_VERSION])
+	{
+		case EV_CURRENT:
+			printf(" (current)\n");
+			break;
+		default:
+			printf("\n");
+			break;
+	}
 }
 
 
@@ -144,7 +144,7 @@ void p_data(unsigned char *e_ident)
 
 void p_abi(unsigned char *e_ident)
 {
-        printf(" ABI Version:                 %d\n", e_ident[EI_ABIVERSION]);
+	printf(" ABI Version:                 %d\n", e_ident[EI_ABIVERSION]);
 }
 
 
@@ -222,7 +222,7 @@ void p_type(unsigned int e_type, unsigned char *e_ident)
 			printf("REL (Relocatable file)\n");
 			break;
 		case ET_CORE:
-		 	printf("CORE (Core file)\n");
+			printf("CORE (Core file)\n");
 			break;
 		case ET_DYN:
 			printf("DYN (Shared object file)\n");
@@ -241,11 +241,11 @@ void p_type(unsigned int e_type, unsigned char *e_ident)
 
 void elf_close(int elf)
 {
-        if (close(elf) == -1)
-        {
-                dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", elf);
-                exit(98);
-        }
+	if (close(elf) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", elf);
+		exit(98);
+	}
 }
 
 
@@ -321,20 +321,20 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(98);
 	}
 
-	  elf_check(header->e_ident);
-	  printf("ELF Header:\n");
+	elf_check(header->e_ident);
+	printf("ELF Header:\n");
 
-	  p_magic(header->e_ident);
-	  p_class(header->e_ident);
-	  p_data(header->e_ident);
-	  p_version(header->e_ident);
-	  p_osABI(header->e_ident);
+	p_magic(header->e_ident);
+	p_class(header->e_ident);
+	p_data(header->e_ident);
+	p_version(header->e_ident);
+	p_osABI(header->e_ident);
 
-	  p_abi(header->e_ident);
-	  p_type(header->e_type, header->e_ident);
-	  p_entry(header->e_entry, header->e_ident);
+	p_abi(header->e_ident);
+	p_type(header->e_type, header->e_ident);
+	p_entry(header->e_entry, header->e_ident);
 
-	  free(header);
-	  elf_close(xx);
-	  return (0);
+	free(header);
+	elf_close(xx);
+	return (0);
 }
