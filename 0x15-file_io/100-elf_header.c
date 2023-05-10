@@ -24,10 +24,8 @@ void elf_check(unsigned char *e_ident)
 
 	for (x = 0; x < 4; x++)
 	{
-		if (e_ident[x] != 127 &&
-				e_ident[x] != 'E' &&
-				e_ident[x] != 'L' &&
-				e_ident[x] != 'F')
+		if (e_ident[x] != '\x7f' && e_ident[x] != 'E' &&
+		e_ident[x] != 'L' && e_ident[x] != 'F')
 		{
 			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 			exit(98);
