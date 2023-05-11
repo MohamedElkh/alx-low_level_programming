@@ -287,7 +287,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	int xx, i;
 
-	Elf64_Ehdr *header;
+	Elf64_Ehdr *head;
 
 	xx = open(argv[1], O_RDONLY);
 
@@ -297,9 +297,9 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 
 		exit(98);
 	}
-	header = malloc(sizeof(Elf64_Ehdr));
+	head = malloc(sizeof(Elf64_Ehdr));
 
-	if (header == NULL)
+	if (head == NULL)
 	{
 		elf_close(xx);
 
@@ -307,11 +307,11 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 
 		exit(98);
 	}
-	i = read(xx, header, sizeof(Elf64_Ehdr));
+	i = read(xx, head, sizeof(Elf64_Ehdr));
 
 	if (i == -1)
 	{
-		free(header);
+		free(head);
 
 		elf_close(xx);
 
@@ -320,20 +320,21 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(98);
 	}
 
-	elf_check(header->e_ident);
+	elf_check(head->e_ident);
 	printf("ELF Header:\n");
 
-	p_magic(header->e_ident);
-	p_class(header->e_ident);
-	p_data(header->e_ident);
-	p_version(header->e_ident);
-	p_osABI(header->e_ident);
+	p_magic(head->e_ident);
+	p_class(head->e_ident);
+	p_data(head->e_ident);
 
-	p_abi(header->e_ident);
-	p_type(header->e_type, header->e_ident);
-	p_entry(header->e_entry, header->e_ident);
+	p_version(head->e_ident);
+	p_osABI(head->e_ident);
 
-	free(header);
+	p_abi(head->e_ident);
+	p_type(head->e_type, head->e_ident);
+	p_entry(head->e_entry, head->e_ident);
+
+	free(head);
 	elf_close(xx);
 	return (0);
 }
