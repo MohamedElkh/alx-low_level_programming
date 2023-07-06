@@ -48,6 +48,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 
+	fresh->key = strdup(key);
+
+	if (fresh->key == NULL)
+	{
+		free(fresh);
+		return (0);
+	}
+
 	fresh->value = new_copy;
 	fresh->next = ht->array[ind];
 	ht->array[ind] = fresh;
