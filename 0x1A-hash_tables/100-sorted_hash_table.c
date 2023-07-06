@@ -44,101 +44,6 @@ shash_table_t *shash_table_create(unsigned long int size)
 	return (ht);
 }
 
-/**
- * shash_table_print - func print sorted table
- * @ht: a pointer
- *
- * Return: nothing.
- */
-
-void shash_table_print(const shash_table_t *ht)
-{
-	shash_node_t *nd;
-
-	if (ht == NULL)
-	{
-		return;
-	}
-
-	nd = ht->shead;
-	printf("{");
-
-	while (nd != NULL)
-	{
-		printf("'%s': '%s'", nd->key, nd->value);
-		nd = nd->snext;
-
-		if (nd != NULL)
-			printf(", ");
-	}
-	printf("}\n");
-}
-
-/**
- * shash_table_print_rev - func to sort data
- * @ht: pointer to be checked
- *
- * Return: nothing.
- */
-
-void shash_table_print_rev(const shash_table_t *ht)
-{
-	shash_node_t *nd;
-
-	if (ht == NULL)
-	{
-		return;
-	}
-
-	nd = ht->stail;
-	printf("{");
-
-	while (nd != NULL)
-	{
-		printf("'%s': '%s'", nd->key, nd->value);
-		nd = nd->sprev;
-
-		if (nd != NULL)
-		{
-			printf(", ");
-		}
-	}
-
-	printf("}\n");
-}
-
-/**
- * shash_table_delete - func to delete the data
- * @ht: the pointer to hash
- *
- * Return: nothing
- */
-
-void shash_table_delete(shash_table_t *ht)
-{
-	shash_node_t *nd, *tp;
-	shash_table_t *hd = ht;
-
-	if (ht == NULL)
-	{
-		return;
-	}
-
-	nd = ht->shead;
-
-	while (nd)
-	{
-		tp = nd->snext;
-		free(nd->key);
-		free(nd->value);
-
-		free(nd);
-		nd = tp;
-	}
-
-	free(hd->array);
-	free(hd);
-}
 
 /**
  * shash_table_set - func to add elem
@@ -281,5 +186,101 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
         }
 
         return ((nd == NULL) ? NULL : nd->value);
+}
+
+/**
+ * shash_table_print - func print sorted table
+ * @ht: a pointer
+ *
+ * Return: nothing.
+ */
+
+void shash_table_print(const shash_table_t *ht)
+{
+        shash_node_t *nd;
+
+        if (ht == NULL)
+        {
+                return;
+        }
+
+        nd = ht->shead;
+        printf("{");
+
+        while (nd != NULL)
+        {
+                printf("'%s': '%s'", nd->key, nd->value);
+                nd = nd->snext;
+
+                if (nd != NULL)
+                        printf(", ");
+        }
+        printf("}\n");
+}
+
+/**
+ * shash_table_print_rev - func to sort data
+ * @ht: pointer to be checked
+ *
+ * Return: nothing.
+ */
+
+void shash_table_print_rev(const shash_table_t *ht)
+{
+        shash_node_t *nd;
+
+        if (ht == NULL)
+        {
+                return;
+        }
+
+        nd = ht->stail;
+        printf("{");
+
+        while (nd != NULL)
+        {
+                printf("'%s': '%s'", nd->key, nd->value);
+                nd = nd->sprev;
+
+                if (nd != NULL)
+                {
+                        printf(", ");
+                }
+        }
+
+        printf("}\n");
+}
+
+/**
+ * shash_table_delete - func to delete the data
+ * @ht: the pointer to hash
+ *
+ * Return: nothing
+ */
+
+void shash_table_delete(shash_table_t *ht)
+{
+        shash_node_t *nd, *tp;
+        shash_table_t *hd = ht;
+
+        if (ht == NULL)
+        {
+                return;
+        }
+
+        nd = ht->shead;
+
+        while (nd)
+        {
+                tp = nd->snext;
+                free(nd->key);
+                free(nd->value);
+
+                free(nd);
+                nd = tp;
+        }
+
+        free(hd->array);
+        free(hd);
 }
 
