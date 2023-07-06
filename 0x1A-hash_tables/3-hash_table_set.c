@@ -11,9 +11,9 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
+	hash_node_t *fresh;
 	char * new_copy;
 	unsigned long int x, ind;
-	hash_node_t *fresh;
 
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 	{
@@ -35,7 +35,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			free(ht->array[x]->value);
 			ht->array[x]->value = new_copy;
-			
+
 			return (1);
 		}
 	}

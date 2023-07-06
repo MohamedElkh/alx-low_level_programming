@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_create - func to create a hash table 
+ * hash_table_create - func to create a hash table
  * @size: the size of the array
  *
  * Return: the result.
@@ -9,8 +9,9 @@
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	unsigned long int x;
-	hash_table_t *hash;
+	hash_table_t *hash = NULL;
+	hash_node_t **ar = NULL;
+	unsigned long int x = 0;
 
 	hash = malloc(sizeof(hash_table_t));
 
@@ -19,17 +20,20 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 	}
 
-	hash->size = size;
-	hash->array = malloc(sizeof(hash_table_t *) * size);
+	ar = malloc(sizeof(hash_node_t *) * size);
 
-	if (hash->array == NULL)
+	if (ar == NULL)
 	{
 		return (NULL);
 	}
 
-	for (x = 0; x < size; x++)
+	for (; x < size; ++x)
 	{
-		hash->array[x] = NULL;
+		ar[x] = NULL;
 	}
+
+	hash->size = size;
+	hash->array = ar;
+
 	return (hash);
 }
