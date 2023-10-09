@@ -68,5 +68,5 @@ int exponential_search(int *array, size_t size, int value)
 
 	printf("Value found between indexes [%ld] and [%ld]\n", x / 2, rt);
 
-	return (do_bi_search(array, x / 2, rt, value))
+	return (do_bi_search(array, x / 2, rt, value));
 }
