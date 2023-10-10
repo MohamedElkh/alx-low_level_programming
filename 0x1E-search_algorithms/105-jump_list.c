@@ -10,8 +10,8 @@
 
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	listint_t *pre;
 	size_t index, km, mk;
+	listint_t *pre;
 
 	if (list == NULL || size == 0)
 	{
@@ -29,7 +29,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 
 		while (list->next && list->index < index)
 		{
-			list = list->next
+			list = list->next;
 		}
 		if (list->next == NULL && index != list->index)
 		{
